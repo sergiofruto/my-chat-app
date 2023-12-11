@@ -1,6 +1,5 @@
 import { useEffect, useState, useRef } from 'react';
 import { useSocket } from '@/context/SocketContext';
-import ChatBar from '@/components/ChatBar';
 import ChatBody from '@/components/ChatBody';
 import ChatFooter from '@/components/ChatFooter';
 

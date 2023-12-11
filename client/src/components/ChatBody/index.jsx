@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useUser } from '@/context/UserContext';
 
 const ChatBody = ({messages, lastMessageRef}) => {
   const router = useRouter();
+  const { user, logoutUser } = useUser();
+
 
   const handleLeaveChat = () => {
-    localStorage.removeItem('userName');
+    logoutUser();
     router.push('/');
   };
 
@@ -26,16 +28,31 @@ const ChatBody = ({messages, lastMessageRef}) => {
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
+                strokeWidth="2"
                 d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
               ></path>
             </svg>
           </div>
           <div class="ml-2 font-bold text-lg">ChatApp</div>
         </div>
-        <button className="flex items-center justify-center bg-red-600 hover:bg-red-800 rounded-xl text-white px-4 py-1 flex-shrink-0" onClick={handleLeaveChat}>
-          Log out
-        </button>
+        <div class="flex items-center justify-center">
+          <span className="green-dot mr-2">
+            <svg
+              class="w-3 h-3 text-green-500 fill-current"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="10" cy="10" r="10" />
+            </svg>
+          </span>
+          <span className="flex mr-4">
+            {/* {localStorage.getItem('userName')} */}
+            {user.username}
+          </span>
+          <button className="flex items-center justify-center bg-red-600 hover:bg-red-800 rounded-xl text-white px-4 py-1 flex-shrink-0" onClick={handleLeaveChat}>
+            Log out
+          </button>
+        </div>
       </header>
       <div className="message__container bg-gray-100">
         {messages.map((message) =>

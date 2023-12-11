@@ -22,20 +22,15 @@ const LoginForm = () => {
         body: JSON.stringify({ username, password }),
       });
 
-      // Handle successful login
+      // Handle login
       if (response.ok) {
         const data = await response.json();
         console.log('User logged in successfully:', data);
         setError(null);
-
-        // Store user information in context
         loginUser(username);
-        // Emit new user to the server
         socket.emit('newUser', { username, socketID: socket.id });
-        // Redirect to /chat
         router.push('/chat');
       } else {
-        // Handle login error
         console.error('Login error:', response.statusText);
         setError('Login failed. Please check your credentials.');
       }
@@ -47,7 +42,6 @@ const LoginForm = () => {
 
   return (
     <div>
-      {/* <h2>Login Form</h2> */}
       <div className="relative mb-4">
         <label htmlFor="username" className="leading-7 text-sm text-gray-600">Username:</label>
         <input

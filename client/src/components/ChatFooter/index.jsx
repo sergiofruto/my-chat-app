@@ -28,7 +28,7 @@ const ChatFooter = ({ socket }) => {
         />
         <button className="sendBtn">SEND</button>
       </form> */}
-      <div class="flex flex-row items-center h-full rounded-xl bg-white w-full">
+      <div class="flex flex-row items-center h-full bg-white w-full">
         <form className="form p-4" onSubmit={handleSendMessage}>
           <div class="flex-grow">
             <div class="relative w-full">
@@ -40,7 +40,7 @@ const ChatFooter = ({ socket }) => {
               <span>Send</span>
               <span class="ml-2">
                 <svg class="w-4 h-4 transform rotate-45 -mt-px" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                 </svg>
               </span>
             </button>
