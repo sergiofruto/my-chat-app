@@ -14,9 +14,11 @@ const Chat = () => {
   }, [user, router]);
 
   return (
-    <>
-      <ChatWindow />
-    </>
+    <div className=" bg-gray-200">
+      <div className='container max-w-5xl mx-auto rounded-2xl'>
+        <ChatWindow />
+      </div>
+    </div>
   );
 };
 

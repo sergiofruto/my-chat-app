@@ -13,7 +13,7 @@ const ChatBody = ({messages, lastMessageRef}) => {
 
   return (
     <>
-      <header className="chat__mainHeader">
+      <header className="chat__mainHeader bg-white">
         <div class="flex flex-row items-center justify-center h-12">
           <div
             class="flex items-center justify-center rounded-2xl text-indigo-700 bg-indigo-100 h-8 w-8"
