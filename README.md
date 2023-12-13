@@ -7,6 +7,7 @@ This application has 2 separate directories:
 
 ```bash
   cd client
+  npm i
   npm run build
   npm run start
 ```
@@ -15,5 +16,6 @@ This application has 2 separate directories:
 
 ```bash
   cd server
+  npm i
   npm run start
 ```
